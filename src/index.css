@@ -4,47 +4,33 @@
 
 @layer base {
   :root {
-    /* Sage & Rose palette */
-    --background: 36 33% 94%;            /* #f5f0e8 cream */
-    --foreground: 140 18% 16%;           /* deep sage ink */
-
+    --background: 36 33% 94%;
+    --foreground: 140 18% 16%;
     --card: 36 40% 97%;
     --card-foreground: 140 18% 16%;
-
     --popover: 36 40% 97%;
     --popover-foreground: 140 18% 16%;
-
-    --primary: 140 16% 33%;              /* sage #4a6741 */
+    --primary: 140 16% 33%;
     --primary-foreground: 36 40% 97%;
-
-    --secondary: 96 21% 86%;             /* pale sage #dce5d4 */
+    --secondary: 96 21% 86%;
     --secondary-foreground: 140 18% 16%;
-
     --muted: 96 21% 90%;
     --muted-foreground: 140 10% 38%;
-
-    --accent: 5 38% 62%;                 /* dusty rose #c17c74 */
+    --accent: 5 38% 62%;
     --accent-foreground: 36 40% 97%;
-
     --rose: 5 38% 62%;
     --rose-soft: 5 45% 82%;
     --sage: 140 16% 33%;
     --sage-soft: 96 21% 86%;
     --cream: 36 33% 94%;
     --ink: 140 22% 12%;
-
     --destructive: 0 60% 50%;
     --destructive-foreground: 36 40% 97%;
-
     --border: 96 18% 80%;
     --input: 96 18% 80%;
     --ring: 5 38% 62%;
-
     --radius: 1rem;
-
-    --gradient-dawn: radial-gradient(circle at 30% 20%, hsl(5 45% 82% / 0.45), transparent 55%),
-                     radial-gradient(circle at 75% 80%, hsl(96 21% 78% / 0.5), transparent 60%),
-                     linear-gradient(180deg, hsl(36 33% 94%), hsl(36 30% 90%));
+    --gradient-dawn: radial-gradient(circle at 30% 20%, hsl(5 45% 82% / 0.45), transparent 55%), radial-gradient(circle at 75% 80%, hsl(96 21% 78% / 0.5), transparent 60%), linear-gradient(180deg, hsl(36 33% 94%), hsl(36 30% 90%));
     --gradient-sage: linear-gradient(135deg, hsl(140 16% 33%), hsl(140 22% 22%));
     --shadow-soft: 0 30px 60px -30px hsl(140 22% 12% / 0.25);
     --shadow-petal: 0 20px 50px -20px hsl(5 38% 50% / 0.35);
@@ -56,11 +42,11 @@
   html { scroll-behavior: smooth; }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Karla', system-ui, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-feature-settings: "ss01", "kern";
   }
   h1, h2, h3, h4, .serif {
-    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+    font-family: Georgia, "Times New Roman", serif;
     font-weight: 400;
     letter-spacing: -0.01em;
   }
@@ -68,45 +54,11 @@
 }
 
 @layer utilities {
-  .font-serif-display { font-family: 'Cormorant Garamond', serif; }
+  .font-serif-display { font-family: Georgia, serif; }
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
-
   .bg-dawn { background: var(--gradient-dawn); }
   .bg-sage { background: var(--gradient-sage); }
   .shadow-soft { box-shadow: var(--shadow-soft); }
   .shadow-petal { box-shadow: var(--shadow-petal); }
-
-  .grain {
-    position: relative;
-  }
-  .grain::after {
-    content: "";
-    position: absolute; inset: 0;
-    pointer-events: none;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.29  0 0 0 0 0.34  0 0 0 0 0.27  0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.35'/></svg>");
-    opacity: 0.18;
-    mix-blend-mode: multiply;
-  }
-
-  @keyframes spin-slow { to { transform: rotate(360deg); } }
-  @keyframes float-soft {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(0.5deg); }
-  }
-  @keyframes draw {
-    to { stroke-dashoffset: 0; }
-  }
-  @keyframes fade-up {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes pulse-petal {
-    0%, 100% { transform: scale(1); opacity: 0.9; }
-    50% { transform: scale(1.08); opacity: 1; }
-  }
-  .animate-spin-slow { animation: spin-slow 80s linear infinite; }
-  .animate-float-soft { animation: float-soft 6s ease-in-out infinite; }
-  .animate-fade-up { animation: fade-up 0.8s ease-out both; }
-  .animate-pulse-petal { animation: pulse-petal 3s ease-in-out infinite; }
 }
