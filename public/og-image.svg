@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f0e8"/>
+  <circle cx="900" cy="140" r="180" fill="#e7c7c1" opacity="0.6"/>
+  <circle cx="220" cy="500" r="160" fill="#dce5d4" opacity="0.8"/>
+  <text x="120" y="220" font-family="Georgia, serif" font-size="72" fill="#223328">Путешествие</text>
+  <text x="120" y="320" font-family="Georgia, serif" font-size="88" font-style="italic" fill="#c17c74">героини</text>
+  <text x="120" y="400" font-family="Arial, sans-serif" font-size="32" fill="#4a6741">10 этапов пути к целостности</text>
+</svg>
